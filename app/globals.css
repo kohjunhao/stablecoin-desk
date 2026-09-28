@@ -348,6 +348,127 @@ hr.rule {
   margin: 36px 0;
 }
 
+.year-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 28px 0 12px;
+  font-family: var(--font-sans);
+}
+
+.year-btn {
+  min-height: 36px;
+  padding: 0 12px;
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--muted);
+  font-size: 0.85rem;
+  font-weight: 620;
+}
+
+.year-btn.on,
+.year-btn[aria-selected="true"] {
+  color: var(--paper);
+  background: var(--ink);
+  border-color: var(--ink);
+}
+
+.chart-cap {
+  font-size: 0.95rem;
+  color: var(--muted);
+  max-width: 46rem;
+  margin-bottom: 12px;
+}
+
+.chart-shell {
+  margin: 8px 0 16px;
+}
+
+.chart-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  cursor: crosshair;
+  touch-action: pan-y;
+}
+
+.chart-svg .axis {
+  stroke: var(--faint);
+  stroke-width: 0.75;
+}
+
+.chart-svg .tick {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  fill: var(--faint);
+}
+
+.chart-svg .price-line {
+  fill: none;
+  stroke: var(--ink);
+  stroke-width: 1.35;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+
+.chart-svg .hover-rule {
+  stroke: var(--line);
+  stroke-width: 1;
+}
+
+.chart-svg .mark {
+  fill: var(--accent);
+  stroke: var(--paper);
+  stroke-width: 1;
+}
+
+.chart-svg .mark.on {
+  fill: var(--no);
+}
+
+.chart-svg .mark-exp {
+  fill: none;
+  stroke: var(--ink);
+  stroke-width: 1.4;
+}
+
+.chart-svg .mark-exp.on {
+  fill: var(--ink);
+}
+
+.take-readout {
+  min-height: 4.8rem;
+  max-width: 42rem;
+  margin-bottom: 8px;
+}
+
+.take-list {
+  list-style: none;
+  max-height: 22rem;
+  overflow: auto;
+  border-top: 1px solid var(--line);
+  margin-top: 8px;
+}
+
+.take-row {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 8.2rem 5.5rem 1fr;
+  gap: 12px;
+  padding: 8px 4px;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  background: transparent;
+  text-align: left;
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  color: var(--ink);
+}
+
+.take-row.on {
+  background: var(--paper-2);
+}
+
 @media (max-width: 640px) {
   .list a {
     grid-template-columns: 3.4rem 1fr;
@@ -358,5 +479,10 @@ hr.rule {
     text-align: left;
     max-width: none;
     padding-top: 0;
+  }
+
+  .take-row {
+    grid-template-columns: 6.6rem 4.4rem 1fr;
+    font-size: 0.8rem;
   }
 }

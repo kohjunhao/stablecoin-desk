@@ -21,6 +21,12 @@ export function Header() {
           >
             Issue vs resell
           </Link>
+          <Link
+            href="/xrp-wheel"
+            aria-current={path === "/xrp-wheel" ? "page" : undefined}
+          >
+            XRP wheel
+          </Link>
         </nav>
       </div>
     </header>
