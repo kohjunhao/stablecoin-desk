@@ -469,6 +469,71 @@ hr.rule {
   background: var(--paper-2);
 }
 
+.iv-box {
+  max-width: 42rem;
+  margin: 8px 0 20px;
+}
+
+.iv-box h2 {
+  margin-top: 12px;
+}
+
+.iv-box p {
+  margin-bottom: 10px;
+  color: var(--muted);
+}
+
+.blot-wrap {
+  overflow-x: auto;
+  margin: 8px 0 40px;
+  border-top: 1px solid var(--line);
+}
+
+table.blot {
+  width: 100%;
+  min-width: 980px;
+  border-collapse: collapse;
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-variant-numeric: tabular-nums;
+}
+
+table.blot th,
+table.blot td {
+  text-align: left;
+  padding: 7px 8px;
+  border-bottom: 1px solid var(--line);
+  white-space: nowrap;
+}
+
+table.blot th {
+  position: sticky;
+  top: 0;
+  background: var(--paper);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--faint);
+  font-weight: 700;
+}
+
+table.blot tr.hit td {
+  background: oklch(0.93 0.03 75);
+}
+
+table.blot tr.after td {
+  background: oklch(0.93 0.035 25);
+}
+
+table.blot tr.after td:first-child,
+table.blot tr.hit td:first-child {
+  box-shadow: inset 3px 0 0 var(--accent);
+}
+
+table.blot tr.after td:first-child {
+  box-shadow: inset 3px 0 0 var(--no);
+}
+
 @media (max-width: 640px) {
   .list a {
     grid-template-columns: 3.4rem 1fr;

@@ -1,34 +1,34 @@
 import type { Metadata } from "next";
-import raw from "@/data/xrp-wheel.json";
-import { WheelChart } from "@/components/WheelChart";
-import type { WheelData } from "@/lib/xrp-wheel";
+import blotterRaw from "@/data/xrp-blotter.json";
+import chartRaw from "@/data/xrp-wheel.json";
+import { WheelDesk } from "@/components/WheelDesk";
+import type { BlotterData, WheelData } from "@/lib/xrp-wheel";
 
-const data = raw as WheelData;
+const chart = chartRaw as WheelData;
+const blotter = blotterRaw as BlotterData;
 
 export const metadata: Metadata = {
-  title: "XRP wheel — 15Δ to 35Δ takes",
+  title: "XRP wheel — chart and blotter",
   description:
-    "XRP spot with every day the weekly 15-delta put marked 35-delta and converted into coins.",
+    "Every XRP put and call in the wheel backtest, with synthetic IV, and marks when a 15-delta put converted at 35-delta and a new put was sold.",
 };
 
 export default function XrpWheelPage() {
   return (
     <main id="main" className="page">
       <div className="wide">
-        <p className="kicker">Backtest · {data.sample}</p>
-        <h1>When the 15-delta put became a 35-delta put, the book bought XRP.</h1>
+        <p className="kicker">Backtest · {chart.sample}</p>
+        <h1>XRP wheel — chart and trade blotter</h1>
         <p className="lede" style={{ maxWidth: "42rem" }}>
-          Weekly 15-delta puts on 5 percent of XRP-NAV. Red marks are conversions
-          into spot: close the put, buy the coins. {data.nDelta35} of {data.nTakes}{" "}
-          hits were the 35-delta rule. {data.nExpiry} waited until Friday and were
-          still in the money. Log scale.
+          Weekly 15-delta puts on 5 percent of XRP-NAV. Convert to spot at 35-delta.
+          25-delta calls only on extra coins. {blotter.nTrades} option sales,
+          {` ${blotter.nAfterConvert} `}
+          of them a new put sold the same day as a take.
         </p>
         <p className="note">
-          Same spec as the wheel that printed 13.1 percent annualized XRP-NAV with
-          a 4.8 percent max drawdown on this window (25-delta calls on extra coins
-          only). Not a live book. Not advice.
+          Synthetic IV, not a Deribit XRP print. Not a live book. Not advice.
         </p>
-        <WheelChart data={data} />
+        <WheelDesk chart={chart} blotter={blotter} />
       </div>
     </main>
   );
