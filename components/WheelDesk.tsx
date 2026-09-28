@@ -12,7 +12,7 @@ export function WheelDesk({
   chart: WheelData;
   blotter: BlotterData;
 }) {
-  const [tab, setTab] = useState<"chart" | "blotter">("blotter");
+  const [tab, setTab] = useState<"chart" | "blotter">("chart");
 
   return (
     <div>

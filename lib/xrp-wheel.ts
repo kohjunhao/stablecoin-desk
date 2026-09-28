@@ -6,16 +6,22 @@ export type WheelTake = {
   kind: "delta35" | "expiry";
 };
 
+export type WheelMark = WheelTake & { side: "put" | "call" };
+
 export type WheelData = {
   sample: string;
   spec: string;
   nTakes: number;
   nDelta35: number;
   nExpiry: number;
+  nCovers: number;
+  nCoverDelta35: number;
+  nCoverExpiry: number;
   annYield: number;
   maxDd: number;
   spot: { d: string; s: number }[];
   takes: WheelTake[];
+  covers: WheelTake[];
 };
 
 export type BlotterTrade = {

@@ -416,24 +416,50 @@ hr.rule {
   stroke-width: 1;
 }
 
-.chart-svg .mark {
-  fill: var(--accent);
+.chart-svg .mark-put {
+  fill: var(--no);
   stroke: var(--paper);
   stroke-width: 1;
 }
 
-.chart-svg .mark.on {
-  fill: var(--no);
+.chart-svg .mark-put.on {
+  fill: var(--accent);
 }
 
-.chart-svg .mark-exp {
-  fill: none;
-  stroke: var(--ink);
-  stroke-width: 1.4;
+.chart-svg .mark-call {
+  fill: var(--ok);
+  stroke: var(--paper);
+  stroke-width: 1;
 }
 
-.chart-svg .mark-exp.on {
-  fill: var(--ink);
+.chart-svg .mark-call.on {
+  fill: oklch(0.32 0.09 145);
+}
+
+.swatch {
+  display: inline-block;
+  width: 0.7rem;
+  height: 0.7rem;
+  border-radius: 50%;
+  margin: 0 0.35rem 0 0.15rem;
+  vertical-align: -0.05rem;
+}
+
+.swatch.put {
+  background: var(--no);
+}
+
+.swatch.call {
+  background: var(--ok);
+  margin-left: 0.85rem;
+}
+
+.take-row.put span:last-child {
+  color: var(--no);
+}
+
+.take-row.call span:last-child {
+  color: var(--ok);
 }
 
 .take-readout {
